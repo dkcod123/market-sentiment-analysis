@@ -1,136 +1,27 @@
-# Market Sentiment Analysis & Opinion Mining Platform
+# SentimentDashboard
 
-## Prerequisites (for a brand new PC)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
-### 1. Python 3.10+
-- Download and install from: https://www.python.org/downloads/
-- During installation, check "Add Python to PATH".
+## Development server
 
-### 2. Node.js (for Angular frontend)
-- Download and install from: https://nodejs.org/en/download/
-- Recommended: LTS version (16+)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-### 3. Docker Desktop
-- Download and install from: https://www.docker.com/products/docker-desktop/
-- Required for containerization and deployment.
+## Code scaffolding
 
-### 4. Git
-- Download and install from: https://git-scm.com/downloads
-- Useful for version control and cloning repositories.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### 5. (Optional) VS Code
-- Download and install from: https://code.visualstudio.com/
-- Recommended for development.
+## Build
 
----
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Project Structure
+## Running unit tests
 
-```
-Market Sentiment Analysis folder/
-│
-├── backend/      # FastAPI, Python, MongoDB, etc.
-├── frontend/     # Angular 16+ dashboard
-├── docker-compose.yml
-└── README.md
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
----
+## Running end-to-end tests
 
-## Setup Steps
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### 1. Clone the repository (if using Git)
-```
-git clone <repo-url>
-cd "Market Sentiment Analysis folder"
-```
+## Further help
 
-### 2. Backend Setup
-- Install Python dependencies:
-```
-cd backend
-pip install -r requirements.txt
-```
-
-### 3. Frontend Setup
-- Install Angular CLI globally (if not already):
-```
-npm install -g @angular/cli@16
-```
-- Create or install frontend dependencies:
-```
-cd ../frontend
-npm install
-```
-
-### 4. Docker Setup
-- To run both backend and frontend using Docker:
-```
-docker-compose up --build
-```
-
----
-
-## Next Steps
-- The backend and frontend folders will be populated in the following steps.
-- Each step will be confirmed with you before proceeding. 
-
----
-
-## API Endpoint Testing & Usage
-
-### 1. Start the FastAPI Backend
-
-If you haven’t already, install the backend dependencies:
-```sh
-cd backend
-pip install -r requirements.txt
-```
-
-Then, start the FastAPI server (for local testing):
-```sh
-uvicorn main:app --reload
-```
-- This will run your API at: http://127.0.0.1:8000
-
----
-
-### 2. Test the Endpoints (in order)
-
-#### A. Fetch Twitter Data
-Fetch and store tweets in MongoDB:
-```
-GET http://127.0.0.1:8000/fetch_twitter_data?limit=10
-```
-
-#### B. Fetch Reddit Data
-Fetch and store Reddit posts/comments in MongoDB:
-```
-GET http://127.0.0.1:8000/fetch_reddit_data?limit=5
-```
-- Note: You need to set up your Reddit API credentials in your environment or in the code for this to work.
-
-#### C. Clean the Data
-Clean and preprocess all fetched data:
-```
-GET http://127.0.0.1:8000/clean_data
-```
-
-#### D. Run Sentiment Analysis
-Classify all cleaned data with FinBERT:
-```
-GET http://127.0.0.1:8000/run_sentiment_analysis
-```
-
----
-
-### 3. Check MongoDB
-- Use MongoDB Compass or another tool to view your collections:
-  - `twitter_data`, `reddit_data` (raw)
-  - `cleaned_twitter_data`, `cleaned_reddit_data` (cleaned + sentiment)
-
----
-
-### 4. Troubleshooting
-- If you get errors about missing packages, install them with pip.
-- If you get errors about Reddit credentials, you’ll need to create a Reddit app and set the credentials in your environment or code. 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

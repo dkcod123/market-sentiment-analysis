@@ -1,11 +1,12 @@
-# Backend Dockerfile
-FROM python:3.10-slim
-
+# Frontend Dockerfile
+FROM node:18 AS build
 WORKDIR /app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+COPY package*.json ./
+RUN npm install
 COPY . .
+RUN npm run build -- --configuration production
 
-CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "main:app", "--bind", "0.0.0.0:8000"] 
+FROM nginx:alpine
+COPY --from=build /app/dist/sentiment-dashboard /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"] 
