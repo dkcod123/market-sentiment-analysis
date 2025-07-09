@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: sentiment-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    restart: always
+
+  frontend:
+    build: ./frontend/sentiment-dashboard
+    container_name: sentiment-frontend
+    ports:
+      - "4200:80"
+    restart: always 
