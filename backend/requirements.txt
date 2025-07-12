@@ -1,0 +1,11 @@
+fastapi
+pymongo
+tweepy
+snscrape
+praw
+transformers
+pandas
+numpy
+apscheduler
+gunicorn
+uvicorn 

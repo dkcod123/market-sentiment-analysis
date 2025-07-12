@@ -1,0 +1,9 @@
+<div *ngIf="trendData && trendData.data.length > 0; else noData">
+  <canvas baseChart
+    [data]="lineChartData"
+    [type]="lineChartType">
+  </canvas>
+</div>
+<ng-template #noData>
+  <div class="no-data">No trend data available.</div>
+</ng-template> 

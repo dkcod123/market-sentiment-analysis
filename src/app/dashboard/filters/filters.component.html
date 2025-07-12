@@ -1,0 +1,22 @@
+<div class="filters-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Timeframe</mat-label>
+    <mat-select [value]="selectedTimeframe" (selectionChange)="onTimeframeChange($event.value)">
+      <mat-option *ngFor="let tf of timeframes" [value]="tf.value">{{tf.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Sentiment</mat-label>
+    <mat-select [value]="selectedSentiment" (selectionChange)="onSentimentChange($event.value)">
+      <mat-option *ngFor="let s of sentiments" [value]="s.value">{{s.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Stock</mat-label>
+    <mat-select [value]="selectedStock" (selectionChange)="onStockChange($event.value)">
+      <mat-option *ngFor="let stock of stocks" [value]="stock.value">{{stock.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div> 
